@@ -190,9 +190,9 @@ public class TerimaGaji extends Gaji{
         System.out.println("3. Kehadiran");
         System.out.print("Jenis data yang diedit (angka) : ");
         edit = Integer.parseInt(i.nextLine());
-        System.out.print("ID data yang ingin di edit : ");
-        iid = i.nextInt();
         selectData();
+        System.out.print("\nID data yang ingin di edit : ");
+        iid = i.nextInt();
         if(edit==1)
             { 
                updateNama(iid); 
