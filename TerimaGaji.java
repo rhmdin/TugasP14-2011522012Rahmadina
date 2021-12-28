@@ -191,7 +191,7 @@ public class TerimaGaji extends Gaji{
         edit = Integer.parseInt(i.nextLine());
         System.out.print("ID data yang ingin di edit : ");
         iid = i.nextInt();
-        searchData();
+        selectData();
         if(edit==1)
             { 
                updateNama(iid); 

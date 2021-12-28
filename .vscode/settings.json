@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\3RD SEMESTER\\Pemograman Berorientasi Objek\\JDBC\\mysql-connector-java-8.0.22.jar"
+    ]
+}
