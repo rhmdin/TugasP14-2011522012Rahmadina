@@ -82,13 +82,14 @@ public class TerimaGaji extends Gaji{
             System.out.print("\nLibur : ");
             int ilbr = i.nextInt();
 	    	String sql = "INSERT INTO gaji (NO_PEGAWAI,NAMA,JABATAN,KEHADIRAN,GAJI_POKOK,POTONGAN,GAJI_TOTAL) VALUES ('"+NoPegawai(iid)+"','"+NamaPegawai(inm)+"','"+Jabatan(ijbt)+"','"+JumlahHariMasuk(ilbr)+"','"+GajiPokok(ijbt)+"','"+Potongan(ijbt, ilbr)+"','"+TotalGaji(ijbt, ilbr)+"')";
+            //201522012RAHMADINA
             Statement statement = DriverManager.getConnection("jdbc:mysql://localhost:3306/pegawai","root","").createStatement();
             statement.execute(sql);
             System.out.println("Data dengan ID "+iid+" berhasil ditambahkan!");
             i.nextLine();
 	    } 
         catch (SQLException e) {
-	        System.err.println("Terjadi kesalahan input data");
+	        System.err.println("Data dengan ID tersebut sudah ada TvT");
 	    } 
         catch (InputMismatchException e) {
 	    	System.err.println("Inputlah dengan angka saja");
@@ -103,12 +104,12 @@ public class TerimaGaji extends Gaji{
             ResultSet result = statement.executeQuery(sql);
 
            if (result.next()){
-                System.out.println("Nama sebelumnya : "+result.getString("NAMA"));
+                System.out.println("\n\nNama sebelumnya : "+result.getString("NAMA"));
                 System.out.print("Nama terbaru : ");
                 inm = i.next();
                 sql = "UPDATE gaji SET NAMA='"+NamaPegawai(inm)+"' WHERE NO_PEGAWAI='"+iid+"'";
                 if(statement.executeUpdate(sql) > 0){
-                    System.out.println("Berhasil memperbaharui nama karyawan dengan ID "+iid+" menjadi "+NamaPegawai(inm)+")");
+                    System.out.println("Berhasil memperbaharui nama karyawan dengan ID "+iid+" menjadi "+NamaPegawai(inm));
                 }
             }
             statement.close();  
@@ -257,7 +258,7 @@ public class TerimaGaji extends Gaji{
             Statement statement = con.createStatement();
             ResultSet result = statement.executeQuery(sql);
 
-           if (result.next()){
+           while (result.next()){
                 System.out.println("\nID : "+result.getString("NO_PEGAWAI"));
                 System.out.println("Nama : "+result.getString("NAMA"));
                 System.out.println("Jabatan : "+result.getString("JABATAN"));

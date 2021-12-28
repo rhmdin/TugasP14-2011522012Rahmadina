@@ -19,6 +19,7 @@ public class Program {
 		con = DriverManager.getConnection(url,"root","");
 		System.out.println("Driver Ready (Enter sekali lagi)");
         LocalDateTime myDateObj = LocalDateTime.now();
+        //201522012RAHMADINA
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String formattedDate = myDateObj.format(myFormatObj);
         boolean lanjut = true;
@@ -65,7 +66,7 @@ public class Program {
             String y = i.nextLine();
             lanjut = y.equalsIgnoreCase("y");
             }while(lanjut);
-            System.out.println("\nTerima kasih telah menggunakan program ini! \n Padang, "+formattedDate);
+            System.out.println("\nTerima kasih telah menggunakan program ini! \nRahmadina, Padang, "+formattedDate);
 
             i.close();
     }
