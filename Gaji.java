@@ -76,8 +76,10 @@ public class Gaji implements PTABC{
         }
         return denda;
     }
-    public long TotalGaji(int ijbt){
+    public long TotalGaji(int ijbt, int ilbr){
+    if(ilbr>0){
         gajiTotal = gajiPokok + (long) ((-1) * denda);
+    }
         return gajiTotal;
     }
 

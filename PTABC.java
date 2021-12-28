@@ -6,5 +6,5 @@ public interface PTABC {
     public long GajiPokok(int ijbt);
     public int JumlahHariMasuk(int ilbr);
     public long Potongan(int ijbt, int ilbr);
-    public long TotalGaji(int ijbt);
+    public long TotalGaji(int ijbt, int ilbr);
 }
